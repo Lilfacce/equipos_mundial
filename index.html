@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mundial 2026 — Selecciones clasificadas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,6 +21,7 @@
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#equipos">Equipos</a></li>
+        <li><a href="#sedes">Sedes</a></li>
       </ul>
     </div>
   </nav>
@@ -41,27 +42,57 @@
     </div>
   </header>
 
-  <!-- ===== Equipos ===== -->
-  <main class="main" id="equipos">
-    <div class="section-head">
-      <h2 class="section-title">Selecciones participantes</h2>
-      <p class="section-count">Mostrando <span id="contador">0</span> equipos</p>
-    </div>
-
-    <!-- Controles -->
-    <div class="controls">
-      <input type="text" id="buscador" class="search" placeholder="Buscar una selección…" aria-label="Buscar selección">
-      <div class="filters" id="filtros" role="group" aria-label="Filtrar por confederación">
-        <!-- Los botones se generan en script.js -->
+  <!-- ===== Contenido Principal ===== -->
+  <main class="main">
+    
+    <!-- Sección Equipos -->
+    <section id="equipos">
+      <div class="section-head">
+        <h2 class="section-title">Selecciones participantes</h2>
+        <p class="section-count">Mostrando <span id="contador">0</span> equipos</p>
       </div>
-    </div>
 
-    <!-- Grid de tarjetas -->
-    <div class="grid" id="grid">
-      <!-- Las tarjetas se generan en script.js -->
-    </div>
+      <!-- Controles -->
+      <div class="controls">
+        <input type="text" id="buscador" class="search" placeholder="Buscar una selección…" aria-label="Buscar selección">
+        <div class="filters" id="filtros" role="group" aria-label="Filtrar por confederación">
+          <!-- Los botones se generan en script.js -->
+        </div>
+      </div>
 
-    <p class="empty" id="vacio" hidden>No se encontró ninguna selección con ese nombre.</p>
+      <!-- Grid de tarjetas -->
+      <div class="grid" id="grid">
+        <!-- Las tarjetas se generan en script.js -->
+      </div>
+
+      <p class="empty" id="vacio" hidden>No se encontró ninguna selección con ese nombre.</p>
+    </section>
+
+    <!-- sedes -->>
+    <section class="venues-section" id="sedes" style="margin-top: 5rem;">
+      <div class="section-head">
+        <h2 class="section-title">Estadios y Ciudades Sede</h2>
+        <p class="section-count">16 ciudades albergarán el torneo histórico</p>
+      </div>
+      <div class="venues-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+        <div class="venue-card" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #888;">México 🇲🇽</span>
+          <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; margin: 0.5rem 0;">Estadio Azteca</h3>
+          <p style="font-size: 0.9rem; color: #ccc; margin: 0;">Ciudad de México — Capacidad: 87,523</p>
+        </div>
+        <div class="venue-card" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #888;">Estados Unidos 🇺🇸</span>
+          <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; margin: 0.5rem 0;">MetLife Stadium</h3>
+          <p style="font-size: 0.9rem; color: #ccc; margin: 0;">Nueva York / Nueva Jersey — Sede de la Final</p>
+        </div>
+        <div class="venue-card" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+          <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #888;">Canadá 🇨🇦</span>
+          <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; margin: 0.5rem 0;">BC Place</h3>
+          <p style="font-size: 0.9rem; color: #ccc; margin: 0;">Vancouver — Capacidad: 54,500</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">

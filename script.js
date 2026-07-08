@@ -1,11 +1,4 @@
-/* ============================================
-   Mundial 2026 — Lógica de la página
-   Datos de las 48 selecciones clasificadas
-============================================ */
-
-// Lista completa de las 48 selecciones clasificadas, por confederación
 const equipos = [
-  // CONMEBOL — Sudamérica (6)
   { nombre: "Argentina",            bandera: "🇦🇷", conf: "CONMEBOL" },
   { nombre: "Brasil",               bandera: "🇧🇷", conf: "CONMEBOL" },
   { nombre: "Colombia",             bandera: "🇨🇴", conf: "CONMEBOL" },
