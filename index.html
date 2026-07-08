@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundial 2026 — Selecciones clasificadas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="nav-ball">⚽</span>
+        <span class="nav-name">Prueba</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#equipos">Equipos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero" id="inicio">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Canadá · México · Estados Unidos</p>
+      <h1 class="hero-title">Mundial <span>2026</span></h1>
+      <p class="hero-sub">Las 48 selecciones que disputan la primera Copa del Mundo con formato ampliado.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">48</span><span class="stat-label">Selecciones</span></div>
+        <div class="stat"><span class="stat-num">12</span><span class="stat-label">Grupos</span></div>
+        <div class="stat"><span class="stat-num">6</span><span class="stat-label">Confederaciones</span></div>
+        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Países sede</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Equipos ===== -->
+  <main class="main" id="equipos">
+    <div class="section-head">
+      <h2 class="section-title">Selecciones participantes</h2>
+      <p class="section-count">Mostrando <span id="contador">0</span> equipos</p>
+    </div>
+
+    <!-- Controles -->
+    <div class="controls">
+      <input type="text" id="buscador" class="search" placeholder="Buscar una selección…" aria-label="Buscar selección">
+      <div class="filters" id="filtros" role="group" aria-label="Filtrar por confederación">
+        <!-- Los botones se generan en script.js -->
+      </div>
+    </div>
+
+    <!-- Grid de tarjetas -->
+    <div class="grid" id="grid">
+      <!-- Las tarjetas se generan en script.js -->
+    </div>
+
+    <p class="empty" id="vacio" hidden>No se encontró ninguna selección con ese nombre.</p>
+  </main>
+
+  <footer class="footer">
+    <p>Proyecto académico · Mundial FIFA 2026 · Dulce Mariel Alvarado Rojas</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

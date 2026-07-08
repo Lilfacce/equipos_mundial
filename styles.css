@@ -1,0 +1,349 @@
+/* ============================================
+   Mundial 2026 — Hoja de estilos
+   Paleta: azul medianoche + dorado trofeo + verde césped
+============================================ */
+
+:root {
+  --night:    #0a1733;
+  --night-2:  #0e2150;
+  --card:     #111f44;
+  --card-2:   #16285a;
+  --gold:     #f5c542;
+  --grass:    #1fa85c;
+  --coral:    #ff5a5f;
+  --sky:      #38bdf8;
+  --paper:    #eef2fb;
+  --muted:    #93a4cc;
+  --line:     rgba(255, 255, 255, 0.08);
+
+  /* Colores por confederación */
+  --c-conmebol: #f5c542;
+  --c-uefa:     #38bdf8;
+  --c-caf:      #1fa85c;
+  --c-afc:      #ff5a5f;
+  --c-concacaf: #c084fc;
+  --c-ofc:      #fb923c;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--night);
+  color: var(--paper);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 23, 51, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-ball { font-size: 1.4rem; }
+
+.nav-name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, var(--gold), var(--coral));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--paper); }
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 90px 24px 80px;
+  background:
+    radial-gradient(circle at 50% -10%, var(--night-2), transparent 60%),
+    var(--night);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(31, 168, 92, 0.18), transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.18), transparent 35%),
+    radial-gradient(circle at 60% 80%, rgba(245, 197, 66, 0.14), transparent 40%);
+  pointer-events: none;
+}
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.82rem;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 12vw, 7rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-title span {
+  background: linear-gradient(120deg, var(--gold), var(--coral), var(--sky));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-sub {
+  max-width: 540px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.stat {
+  min-width: 110px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.stat-num {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+/* ===== Sección equipos ===== */
+.main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-count { color: var(--muted); font-size: 0.95rem; }
+.section-count span { color: var(--gold); font-weight: 700; }
+
+/* Controles */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.search {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--paper);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search::placeholder { color: var(--muted); }
+.search:focus { border-color: var(--sky); }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover { color: var(--paper); border-color: var(--muted); }
+
+.filter-btn.active {
+  color: var(--night);
+  background: var(--gold);
+  border-color: var(--gold);
+  font-weight: 600;
+}
+
+/* Grid de tarjetas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.team-card {
+  position: relative;
+  padding: 22px 18px;
+  background: linear-gradient(160deg, var(--card), var(--card-2));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+  animation: rise 0.4s ease both;
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent, var(--gold));
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent, var(--gold));
+}
+
+.team-flag {
+  font-size: 3rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.team-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.team-conf {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: var(--accent, var(--gold));
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 48px 0;
+  font-size: 1.05rem;
+}
+
+/* ===== Footer ===== */
+.footer {
+  border-top: 1px solid var(--line);
+  text-align: center;
+  padding: 28px 24px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .nav-links { gap: 16px; }
+  .hero { padding: 64px 20px 56px; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; scroll-behavior: auto; }
+}
